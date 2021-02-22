@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css//msin.css">
+  <title>Aprendo JS</title>
+</head>
+<body>
+  <head></head>
+  <section class="main container">
+    <h1>Bienvenido a "aprendo JS"</h1>
+    <h3>Aquí encontrarás pequeños ejercicios resueltos y prácticos referentes a la funcionalidad de <strong>JavaScript</strong></h3>
+    <div class="operations">
+
+      <div class="card">
+        <h5 class="card-header">Convertir cadena a mayúsculas</h5>
+        <div class="card-body">
+          <button type="button" class="btn btn-success" onclick="convertUpperCase('Soy una cadena')">Convertir</button>
+          <label id="labelUpperCase">Soy una cadena</label>
+          <button type="button" class="btn btn-secondary" onclick="showCode('codeUpperCase')">Ver Código</button>
+          <code class="invisible" id="codeUpperCase">cadena.toUpperCase();</code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h5 class="card-header">Convertir cadena a minúsculas</h5>
+        <div class="card-body">
+          <button type="button" class="btn btn-success" onclick="convertLowerCase('Soy Otra Cadena')">Convertir</button>
+          <label id="labelLowerCase">Soy Otra Cadena</label>
+          <button type="button" class="btn btn-secondary" onclick="showCode('codeLowerCase')">Ver Código</button>
+          <code class="invisible" id="codeLowerCase">cadena.toLowerCase();</code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h5 class="card-header">Obtener longitud de cadena o array</h5>
+        <div class="card-body">
+          <button type="button" class="btn btn-success" onclick="getLength('Soy una cadena de N longitud')">Obtener</button>
+          <label id="labelLengthText">Soy una cadena de N longitud</label>
+          <button type="button" class="btn btn-secondary" onclick="showCode('length')">Ver Código</button>
+          <code class="invisible" id="length">cadena.length</code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h5 class="card-header">Conocer tipo de dato</h5>
+        <div class="card-body">
+          <button type="button" class="btn btn-success" onclick="getTypeOf('9u3 tip0 d3 dat0 s0y?')">Conocer</button>
+          <label id="labelTypeOf">9u3 tip0 d3 dat0 s0y?</label>
+          <button type="button" class="btn btn-secondary" onclick="showCode('codeTypeOf')">Ver Código</button>
+          <code class="invisible" id="codeTypeOf"> typeof cadena</code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h5 class="card-header">Ejemplo objeto Persona</h5>
+        <div class="card-body">
+          <label id="labelObject">Objeto Persona</label>
+          <button type="button" class="btn btn-secondary" onclick="showCode('codeObject')">Ver Código</button>
+          <code class="invisible" id="codeObject"> let person = {
+            name: 'Carlos',
+            age: 31,
+            city: 'Xalapa',
+            country: 'México'
+          }</code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h5 class="card-header">Desestructurar objeto</h5>
+        <div class="card-body">
+          <label id="labelObject">Objeto Persona</label>
+          <button type="button" class="btn btn-secondary" onclick="showCode('codeObject')">Ver Código</button>
+          <code class="invisible" id="codeObject"> let person = {
+            name: 'Carlos',
+            age: 31,
+            city: 'Xalapa',
+            country: 'México'
+          }</code>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
