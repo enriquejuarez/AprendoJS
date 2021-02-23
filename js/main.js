@@ -217,3 +217,49 @@ function useReduce(){
   }, 0));
 }
 
+function Person(name, lastName, high){
+  /*Prototipo*/
+  this.name = name;
+  this.lastName = lastName;
+  this.high = high;
+}
+Person.prototype.sayHello = function(){
+  console.log(`Hola me llamo ${this.name} ${this.lastName}`);
+}
+Person.prototype.imTall = function(){
+  return this.high > 1.8;
+}
+let maria = new Person('Maria', 'Perez', 1.4);
+let pedro = new Person('Pedro', 'Rodriguez', 1.9);
+
+
+class Animal{
+  /* Clases */
+  constructor(name, age){
+    this.name = name;
+    this.age = age;
+  }
+  sayHello(){
+    console.log(`Soy un ${this.name} y tengo ${this.age} años`);
+  }
+}
+class Feline extends Animal{
+  /* Clases herencia */
+  constructor(name, age){
+    super(name, age);
+  }
+}
+let perro = new Animal('Perro', 4);
+let gato = new Feline('Gato', 2);
+
+function sayHello(name, fn){
+  /* Envío de función como parámetro */
+  console.log(`Hola buen día, mi nombre es ${name}`);
+  if(fn){
+    fn(name);
+  }
+}
+function autoResponse(name){
+  console.log(`Hola ${name}, mucho gusto!`)
+}
+sayHello('Marco', autoResponse);
