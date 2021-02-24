@@ -183,8 +183,13 @@ function mapArray(){
     };
   });
 
+  let personsName = persons.map((person) => {
+    return person.name
+  })
+
   console.log('Soy el arreglo original', persons);
   console.log('Soy el arreglo con la altura aumentada', personsPlus);
+  console.log('El nombre de las peronas es: ', personsName);
 }
 
 function useReduce(){
@@ -262,4 +267,4 @@ function sayHello(name, fn){
 function autoResponse(name){
   console.log(`Hola ${name}, mucho gusto!`)
 }
-sayHello('Marco', autoResponse);
+// sayHello('Marco', autoResponse);
