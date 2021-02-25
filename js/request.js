@@ -121,7 +121,3 @@ function sayHello(){
   console.log(`Hola mi nombre es: ${this.name}`);
 }
 const sayHelloNow = sayHello.bind(person);
-
-
-const persona = { nombre: 'Sacha' }
-console.log(persona === { nombre: 'Sacha' })

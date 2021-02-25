@@ -268,3 +268,104 @@ function autoResponse(name){
   console.log(`Hola ${name}, mucho gusto!`)
 }
 // sayHello('Marco', autoResponse);
+
+function makeCounter(n){
+  /* closure para encapsular el código, count es una variable privada */
+  let count = n;
+
+  return {
+    increase: function() {
+      count++;
+    },
+    decrease: function(){
+      count--
+    },
+    getCount: function(){
+      return count;
+    }
+  }
+}
+
+let counter = makeCounter(7);
+// console.log('El contador es: ', counter.getCount());
+// counter.increase();
+// console.log('El contador es: ', counter.getCount());
+
+/* scope global */
+// console.log(`this: ${this}`);
+
+function whoIsThis(){
+  /* scope global en modo stricto*/
+  'use strict'
+  return this;
+}
+
+const personNew = {  
+  /* scope en el contexto de un objeto*/
+  name: 'Carlos',
+  sayHello: function(){
+    console.log(`Hola soy ${this.name}`);
+  }
+}
+// personNew.sayHello();
+
+function Person(name){
+  /* scope en el contexto de una clase*/
+  this.name = name;
+}
+Person.prototype.sayHello = function(){
+  console.log(`Hola soy ${this.name}`);
+}
+let bety = new Person('Bety');
+// bety.sayHello();
+
+function sayHelloAgain(){
+  console.log(`Hola soy ${this.name}`);
+}
+const jacqueline = {
+  name: 'Jacqueline',
+  lastName: 'Perez'
+}
+/* la propiedad call ejecuta la función asociada */
+// sayHelloAgain.call(jacqueline);
+
+function walk(meters, address){
+  console.log(`${this.name} camina ${meters} metros hacia el ${address}`);
+}
+// walk.call(jacqueline, 500, 'sur');
+
+/* la propiedad apply ejecuta la función asociada */
+// walk.apply(jacqueline, [400, 'norte']);
+
+const daniela = {
+  name: 'Daniela',
+  lastName: 'Torres'
+}
+const danuelSayHello = sayHelloAgain.bind(daniela);
+// danuelSayHello();
+const danielaWalk = walk.bind(daniela);
+// danielaWalk(500, 'noreste');
+
+const buttons = document.getElementsByClassName('call-to-action');
+
+Array.prototype.forEach.call(buttons, button => {
+  button.onclick = (event) => {
+    alert('Nunca pares de aprender!');
+    console.log(event);
+  }
+});
+
+/* Uso de herencia prototipal, Object.create devuelve un nuevo objeto */
+const heroMethods = {
+  saludar: function(){
+    console.log(`Soy superheroe! ${this.name}`);
+  }
+}
+function Hero(name){
+  const hero = Object.create(heroMethods);
+  hero.name = name;
+
+  return hero;
+}
+const zelda = Hero('Zelda')
+zelda.saludar();
