@@ -369,3 +369,4 @@ function Hero(name){
 }
 const zelda = Hero('Zelda')
 zelda.saludar();
+

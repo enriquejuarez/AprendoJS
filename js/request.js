@@ -92,7 +92,7 @@ function getPlanetsPromise(id){
 //   console.log(err);
 // })
 
-/* Llamada de promesas en paralelo */
+/* Llamada de promesas en paralelo, espera que todas las promesas se resuelvan para proseguir */
 // let ids = [1, 2, 3, 4, 5];
 // let promises = ids.map(id => getPlanetsPromise(id));
 // Promise
