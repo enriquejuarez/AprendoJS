@@ -368,5 +368,14 @@ function Hero(name){
   return hero;
 }
 const zelda = Hero('Zelda')
-zelda.saludar();
+// zelda.saludar();
 
+
+function* simpleGenerator(){
+  /* función de tipo generadores */
+  console.log('GENERATOR START');
+  yield 1;
+  console.log('GENERATOR END');
+}
+const gen = simpleGenerator();
+console.log(gen.next()); //detiene la ejecución en el primer yield y devuelve el valor 1 y done en false
